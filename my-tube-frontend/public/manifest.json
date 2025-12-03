@@ -1,0 +1,51 @@
+{
+  "short_name": "MyTube",
+  "name": "MyTube - Video Sharing Platform",
+  "description": "Watch, share, and discover amazing videos from creators around the world.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ff0000",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["entertainment", "video", "social"],
+  "shortcuts": [
+    {
+      "name": "Watch Trending",
+      "short_name": "Trending",
+      "description": "Watch trending videos",
+      "url": "/trending",
+      "icons": [{ "src": "icon-trending.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Upload Video",
+      "short_name": "Upload",
+      "description": "Upload a new video",
+      "url": "/upload",
+      "icons": [{ "src": "icon-upload.png", "sizes": "96x96" }]
+    }
+  ],
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "related_applications": []
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ff0000" />
+    <meta name="description" content="MyTube - YouTube Clone Application | Watch, share, and discover amazing videos from creators around the world." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mytube-app.com/" />
+    <meta property="og:title" content="MyTube - Video Sharing Platform" />
+    <meta property="og:description" content="Watch, share, and discover amazing videos from creators around the world." />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mytube-app.com/" />
+    <meta property="twitter:title" content="MyTube - Video Sharing Platform" />
+    <meta property="twitter:description" content="Watch, share, and discover amazing videos from creators around the world." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.png" />
+    
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="video, youtube, clone, streaming, content, creators, entertainment, education, music, gaming" />
+    
+    <!-- Author -->
+    <meta name="author" content="MyTube Team" />
+    
+    <!-- Mobile App Capable -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- PWA Theme Color -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ff0000" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#cc0000" />
+    
+    <!-- Preconnect to APIs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" as="style" href="%PUBLIC_URL%/css/fonts.css" />
+    
+    <title>MyTube - Watch, Share, Discover Videos</title>
+    
+    <!-- Progressive Web App -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-title" content="MyTube" />
+    
+    <!-- Windows -->
+    <meta name="msapplication-TileColor" content="#ff0000" />
+    <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml" />
+    
+    <!-- Analytics Script (placeholder) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script> -->
+    
+    <style>
+      /* Critical CSS - Loads before React */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #f9f9f9;
+        color: #0f0f0f;
+      }
+      
+      /* Loading Screen Styles */
+      #root {
+        min-height: 100vh;
+      }
+      
+      .app-loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+        color: white;
+        font-family: 'Roboto', sans-serif;
+      }
+      
+      .loading-content {
+        text-align: center;
+        animation: fadeIn 0.5s ease-in;
+      }
+      
+      .loading-spinner {
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top: 3px solid white;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+      }
+      
+      .loading-text {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+      
+      .loading-subtext {
+        font-size: 14px;
+        opacity: 0.8;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading" class="app-loading">
+      <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">MyTube</div>
+        <div class="loading-subtext">Loading amazing videos...</div>
+      </div>
+    </div>
+    
+    <noscript>
+      <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        z-index: 9999;
+      ">
+        <div>
+          <h1 style="color: #ff0000; margin-bottom: 20px; font-size: 24px;">⚠️ JavaScript Required</h1>
+          <p style="margin-bottom: 15px; font-size: 16px; color: #333;">
+            MyTube requires JavaScript to function properly.
+          </p>
+          <p style="font-size: 14px; color: #666; max-width: 500px; margin: 0 auto;">
+            Please enable JavaScript in your browser settings or try using a modern browser like Chrome, Firefox, or Edge.
+          </p>
+          <div style="margin-top: 30px; font-size: 12px; color: #999;">
+            <p>Supported Browsers:</p>
+            <p>Chrome 60+, Firefox 55+, Safari 11+, Edge 79+</p>
+          </div>
+        </div>
+      </div>
+    </noscript>
+    
+    <div id="root"></div>
+    
+    <!-- Script to hide loading screen when React loads -->
+    <script>
+      // Hide loading screen when React app mounts
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var loading = document.getElementById('loading');
+          if (loading) {
+            loading.style.opacity = '0';
+            loading.style.transition = 'opacity 0.5s ease';
+            setTimeout(function() {
+              loading.style.display = 'none';
+            }, 500);
+          }
+        }, 1000);
+      });
+      
+      // Service Worker Registration for PWA
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js').then(
+            function(registration) {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            },
+            function(err) {
+              console.log('ServiceWorker registration failed: ', err);
+            }
+          );
+        });
+      }
+      
+      // Performance Monitoring
+      window.addEventListener('load', function() {
+        if ('performance' in window) {
+          var timing = performance.getEntriesByType('navigation')[0];
+          if (timing) {
+            var loadTime = timing.loadEventEnd - timing.startTime;
+            console.log('Page loaded in ' + loadTime + 'ms');
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
